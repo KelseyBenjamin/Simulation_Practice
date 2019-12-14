@@ -1,0 +1,35 @@
+/************************************************************
+PURPOSE:
+    ( Simulate a lander )
+LIBRARY DEPENDENCIES:
+    ((lander/src/lander.cpp))
+*************************************************************/
+#include "sim_objects/default_trick_sys.sm"
+##include "lander/include/lander.h"
+class LanderSimObject : public Trick::SimObject {
+    public:
+    Lander lander;
+    LanderSimObject() {
+        ("default_data")    lander.lander_default_data() ;
+        ("initialization")   lander.lander_init() ;
+        ("derivative")      lander.lander_deriv() ;
+        ("integration") trick_ret = lander.lander_integ() ;
+    }
+};
+
+LanderSimObject dyn;
+
+IntegLoop dyn_integloop (0.01) dyn;
+
+void create_connections() {
+    dyn_integloop.getIntegrator(Runge_Kutta_4, 6);
+}
+
+
+
+
+
+
+
+
+

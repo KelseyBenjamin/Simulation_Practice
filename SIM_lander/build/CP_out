@@ -1,0 +1,35 @@
+Output for /users/trick/trick17/libexec/trick/configuration_processor version 17.5.dev- at Sat Dec 14 15:03:24 2019
+
+Parsing    S_define
+Processing S_define
+Processing /usr/include/stdc-predef.h
+Continuing S_define
+Processing /users/trick/trick17/share/trick/sim_objects/default_trick_sys.sm
+Processing SysSimObject
+Processing MonteCarloSimObject
+Processing MemoryManagerSimObject
+Processing CheckPointRestartSimObject
+Processing SieSimObject
+Processing CommandLineArgumentsSimObject
+Processing MessageSimObject
+Processing JITSimObject
+Processing InputProcessorSimObject
+Processing ThreadProcessEventSimObject
+Processing EventManagerSimObject
+Processing VariableServerSimObject
+Processing DataRecordDispatcherSimObject
+Processing RTSyncSimObject
+Processing FrameLogSimObject
+Processing MasterSlaveSimObject
+Processing InstrumentationSimObject
+Processing DMTCPSimObject
+Processing InjectorExecSimObject
+Processing InjectorSimObject
+Processing ZeroconfSimObject
+Processing UnitTestSimObject
+Processing UdUnitsSimObject
+Continuing S_define
+Processing LanderSimObject
+Finished   S_define
+Writing    S_source.c
+Writing    Default_data
