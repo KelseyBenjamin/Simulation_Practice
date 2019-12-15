@@ -5,6 +5,7 @@ LIBRARY DEPENDENCY:
 *******************************************************************************/
 #include "sim_services/Integrator/include/integrator_c_intf.h"
 #include "../include/lander.h"
+#include "trick/exec_proto.h"
 #include <math.h>
 #include <iostream>
 
@@ -45,6 +46,20 @@ int Lander::lander_deriv() {
    return(0);
 }
 
+int Lander::lander_shutdown() {
+
+	double t = exec_get_sim_time();
+  	printf( "========================================\n");
+   	printf( "     Lander  State at Shutdown     \n");
+    	printf( "t = %g\n", t);
+    	printf( "pos = [%.9f, %.9f]\n", C->pos[0], C->pos[1]);
+    	printf( "vel = [%.9f, %.9f]\n", C->vel[0], C->vel[1]);
+	//printf( "DID YOU SURVIVE\n %s",survive);
+	//printf( "WAS IT A GOOD LAND\n %s", good_land);
+    	printf( "========================================\n");
+    return 0 ;	
+
+}
 
 int Lander::lander_integ() {
 

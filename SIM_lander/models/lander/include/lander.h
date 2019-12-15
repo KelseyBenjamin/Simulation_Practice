@@ -46,6 +46,7 @@ public:
 	int lander_init();
 	int lander_deriv();
 	int lander_integ();
+	int lander_shutdown();
 	//double lander_impact();
 
 };
