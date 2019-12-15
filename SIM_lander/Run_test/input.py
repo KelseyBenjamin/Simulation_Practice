@@ -1,13 +1,27 @@
+execfile("Modified_Data/realtime.py")
+execfile("Modified_Data/lander.dr")
+
+
 trick.stop(10)
 
-#==================================
-# Start the variable server client.
-#==================================
+
+#==========================================
+# Start the display VarServer Client
+#==========================================
 varServerPort = trick.var_server_get_port();
-LanderDisplay_path = os.environ['HOME'] + "/LanderDisplay_Rev2.py"
+LanderDisplay_path = "models/graphics/dist/LanderDisplay.jar"
+
 if (os.path.isfile(LanderDisplay_path)) :
-    LanderDisplay_cmd = LanderDisplay_path + " " + str(varServerPort) + " &" ;
+    LanderDisplay_cmd = "java -jar " \
+                   + LanderDisplay_path \
+                   + " " + str(varServerPort) + " &" ;
     print(LanderDisplay_cmd)
     os.system( LanderDisplay_cmd);
 else :
-    print('Oops! Can\'t find ' + CannonDisplay_path )
+    print('==================================================================================')
+    print('LanderDisplay needs to be built. Please \"cd\" into models/graphics and type \"make\".')
+    print('==================================================================================')
+
+
+
+

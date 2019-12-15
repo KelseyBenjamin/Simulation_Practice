@@ -1,0 +1,1 @@
+sys.exec.out.time {s},dyn.lander.pos[0] {1},dyn.lander.pos[1] {1},dyn.lander.vel[0] {1},dyn.lander.vel[1] {1},dyn.lander.mass {1},dyn.lander.angle {1},dyn.lander.throttle {1}
