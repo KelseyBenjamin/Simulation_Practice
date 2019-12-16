@@ -17,7 +17,7 @@ public:
 	double angleDDot;
 	double thrust;
 
-	int throttle;
+	double throttle;
 	int rcs_command;
 
 
@@ -44,8 +44,10 @@ public:
 
 	int lander_default_data();
 	int lander_init();
+	int lander_controls();
 	int lander_deriv();
 	int lander_integ();
+	int lander_post_integ();
 	int lander_shutdown();
 	//double lander_impact();
 

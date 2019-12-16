@@ -897,8 +897,10 @@ class LanderSimObject : public Trick::SimObject {
             Trick::JobData * job __attribute__((unused)) ;
             job = this->add_job(0, 0, "default_data", NULL, 1, "lander.lander_default_data", "", 60000) ;
             job = this->add_job(0, 1, "initialization", NULL, 1, "lander.lander_init", "", 60000) ;
-            job = this->add_job(0, 2, "derivative", NULL, 1, "lander.lander_deriv", "", 60000) ;
-            job = this->add_job(0, 3, "integration", NULL, 1, "lander.lander_integ", "", 60000) ;
+            job = this->add_job(0, 2, "scheduled", NULL, 0.1, "lander.lander_controls", "", 60000) ;
+            job = this->add_job(0, 3, "derivative", NULL, 1, "lander.lander_deriv", "", 60000) ;
+            job = this->add_job(0, 4, "integration", NULL, 1, "lander.lander_integ", "", 60000) ;
+            job = this->add_job(0, 5, "post_integration", NULL, 1, "lander.lander_post_integ", "", 60000) ;
     }
 
     public:

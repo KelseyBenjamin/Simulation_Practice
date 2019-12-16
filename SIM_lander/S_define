@@ -12,14 +12,16 @@ class LanderSimObject : public Trick::SimObject {
     LanderSimObject() {
         ("default_data")    lander.lander_default_data() ;
         ("initialization")   lander.lander_init() ;
+	(0.1, "scheduled")	lander.lander_controls();
         ("derivative")      lander.lander_deriv() ;
         ("integration") trick_ret = lander.lander_integ() ;
+	("post_integration")	lander.lander_post_integ() ;
     }
 };
 
 LanderSimObject dyn;
 
-IntegLoop dyn_integloop (0.01) dyn;
+IntegLoop dyn_integloop (0.1) dyn;
 
 void create_connections() {
     dyn_integloop.getIntegrator(Runge_Kutta_4, 6);

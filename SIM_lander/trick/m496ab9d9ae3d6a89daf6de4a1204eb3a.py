@@ -196,8 +196,11 @@ class Lander(_object):
     if _newclass:good_land = _swig_property(_m496ab9d9ae3d6a89daf6de4a1204eb3a.Lander_good_land_get, _m496ab9d9ae3d6a89daf6de4a1204eb3a.Lander_good_land_set)
     def lander_default_data(self, *args): return _m496ab9d9ae3d6a89daf6de4a1204eb3a.Lander_lander_default_data(self, *args)
     def lander_init(self, *args): return _m496ab9d9ae3d6a89daf6de4a1204eb3a.Lander_lander_init(self, *args)
+    def lander_controls(self, *args): return _m496ab9d9ae3d6a89daf6de4a1204eb3a.Lander_lander_controls(self, *args)
     def lander_deriv(self, *args): return _m496ab9d9ae3d6a89daf6de4a1204eb3a.Lander_lander_deriv(self, *args)
     def lander_integ(self, *args): return _m496ab9d9ae3d6a89daf6de4a1204eb3a.Lander_lander_integ(self, *args)
+    def lander_post_integ(self, *args): return _m496ab9d9ae3d6a89daf6de4a1204eb3a.Lander_lander_post_integ(self, *args)
+    def lander_shutdown(self, *args): return _m496ab9d9ae3d6a89daf6de4a1204eb3a.Lander_lander_shutdown(self, *args)
     def __getitem__(self, *args): return _m496ab9d9ae3d6a89daf6de4a1204eb3a.Lander___getitem__(self, *args)
     def __len__(self, *args): return _m496ab9d9ae3d6a89daf6de4a1204eb3a.Lander___len__(self, *args)
     def __init__(self, **kwargs):

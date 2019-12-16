@@ -2,7 +2,7 @@ execfile("Modified_Data/realtime.py")
 execfile("Modified_Data/lander.dr")
 
 
-trick.stop(10)
+#trick.stop(10)
 
 
 #==========================================

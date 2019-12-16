@@ -1,18 +1,20 @@
-|L   1|2019/12/15,15:40:15|l3comm24| |T 0|0.000000| Freeze ON. Simulation time holding at 0.000000 seconds.
-|L   0|2019/12/15,15:57:14|l3comm24| |T 0|0.000000| 
+|L   1|2019/12/16,15:09:28|l3comm24| |T 0|0.000000| Freeze ON. Simulation time holding at 0.000000 seconds.
+|L   1|2019/12/16,15:09:33|l3comm24| |T 0|0.000000| Freeze OFF.
+|L   1|2019/12/16,15:15:55|l3comm24| |T 0|382.300000| Freeze ON. Simulation time holding at 382.300000 seconds.
+|L   0|2019/12/16,15:15:57|l3comm24| |T 0|382.300000| 
      REALTIME SHUTDOWN STATS:
      REALTIME TOTAL OVERRUNS:            0
-            ACTUAL INIT TIME:        0.098
-         ACTUAL ELAPSED TIME:     1019.115
-|L   0|2019/12/15,15:57:14|l3comm24| |T 0|0.000000| 
+            ACTUAL INIT TIME:        0.213
+         ACTUAL ELAPSED TIME:      389.570
+|L   0|2019/12/16,15:15:58|l3comm24| |T 0|382.300000| 
 SIMULATION TERMINATED IN
   PROCESS: 0
   ROUTINE: Executive_freeze_loop.cpp:85
   DIAGNOSTIC: Sim control Shutdown
 
        SIMULATION START TIME:        0.000
-        SIMULATION STOP TIME:        0.000
-     SIMULATION ELAPSED TIME:        0.000
-        ACTUAL CPU TIME USED:        2.979
-       SIMULATION / CPU TIME:        0.000
-     INITIALIZATION CPU TIME:        0.057
+        SIMULATION STOP TIME:      382.300
+     SIMULATION ELAPSED TIME:      382.300
+        ACTUAL CPU TIME USED:        2.895
+       SIMULATION / CPU TIME:      132.039
+     INITIALIZATION CPU TIME:        0.177

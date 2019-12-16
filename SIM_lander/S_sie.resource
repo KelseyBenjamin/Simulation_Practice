@@ -723,7 +723,7 @@
     </member>
     <member
       name="throttle"
-      type="int"
+      type="double"
       io_attributes="15"
       units="1">
     </member>

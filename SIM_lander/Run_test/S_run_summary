@@ -4,17 +4,17 @@ General:
 
 Executable called = /home/caci114/Simulation_Practice/SIM_lander/S_main_Linux_4.8_x86_64.exe
 Input file = Run_test/input.py
-S_main build time = Sat Dec 14 15:03:25 2019
+S_main build time = Mon Dec 16 15:08:36 2019
 Trick version = 17.5.dev
 
 ===============================================================================
 Build time Environment:
 
 TRICK_CC = /usr/bin/gcc
-TRICK_CFLAGS =  -Imodels
+TRICK_CFLAGS = -Wall -Wmissing-prototypes -Wextra -Wshadow -Imodels
 TRICK_CONVERT_SWIG_FLAGS = 
 TRICK_CPPC = /usr/bin/g++
-TRICK_CXXFLAGS =  -Imodels
+TRICK_CXXFLAGS = -Wall -Wextra -Wshadow -Imodels
 TRICK_DEBUG = 0
 TRICK_EDITOR = 
 TRICK_EXEC_LINK_LIBS =  -L/usr/lib64 -lpython2.7 -lpthread -ldl  -lutil -lm -ludunits2 -lrt -lm -ldl -lhdf5_hl -lhdf5 -lgsl -lgslcblas

@@ -1,5 +1,5 @@
 
-/* Created 2019/12/14 15:03:25 caci114 $ */
+/* Created 2019/12/16 15:08:36 caci114 $ */
 #include "../S_source.hh"
 
 
@@ -1083,10 +1083,16 @@ int LanderSimObject::call_function ( Trick::JobData * curr_job ) {
             lander.lander_init() ;
             break ;
         case 2:
-            lander.lander_deriv() ;
+            lander.lander_controls() ;
             break ;
         case 3:
+            lander.lander_deriv() ;
+            break ;
+        case 4:
             trick_ret = lander.lander_integ() ;
+            break ;
+        case 5:
+            lander.lander_post_integ() ;
             break ;
         default:
             trick_ret = -1 ;
@@ -1136,20 +1142,20 @@ UdUnitsSimObject trick_udunits;
 LanderSimObject dyn;
 
 // Integration Loop Sim Object(s) JMP
-IntegLoopSimObject dyn_integloop(0.01, 0, &dyn, (void *)NULL);
+IntegLoopSimObject dyn_integloop(0.1, 0, &dyn, (void *)NULL);
 
 /* Default Environment */
 SimEnvironment::SimEnvironment() {
 
     local_env["TRICK_CC"] = "/usr/bin/gcc";
     setenv("TRICK_CC", local_env["TRICK_CC"].c_str(), 0);
-    local_env["TRICK_CFLAGS"] = " -Imodels";
+    local_env["TRICK_CFLAGS"] = "-Wall -Wmissing-prototypes -Wextra -Wshadow -Imodels";
     setenv("TRICK_CFLAGS", local_env["TRICK_CFLAGS"].c_str(), 1);
     local_env["TRICK_CONVERT_SWIG_FLAGS"] = "";
     setenv("TRICK_CONVERT_SWIG_FLAGS", local_env["TRICK_CONVERT_SWIG_FLAGS"].c_str(), 0);
     local_env["TRICK_CPPC"] = "/usr/bin/g++";
     setenv("TRICK_CPPC", local_env["TRICK_CPPC"].c_str(), 0);
-    local_env["TRICK_CXXFLAGS"] = " -Imodels";
+    local_env["TRICK_CXXFLAGS"] = "-Wall -Wextra -Wshadow -Imodels";
     setenv("TRICK_CXXFLAGS", local_env["TRICK_CXXFLAGS"].c_str(), 1);
     local_env["TRICK_DEBUG"] = "0";
     setenv("TRICK_DEBUG", local_env["TRICK_DEBUG"].c_str(), 0);
@@ -1223,8 +1229,8 @@ Trick::ClassSizeCheck * Trick::ClassSizeCheck::pInstance = NULL ;
 void memory_init( void ) {
 
     ALLOC_INFO * ai ;
-    exec_set_version_date_tag( "@(#)CP Version 17.5.dev, Sat Dec 14 15:03:25 2019" ) ;
-    exec_set_build_date( "Sat Dec 14 15:03:25 2019" ) ;
+    exec_set_version_date_tag( "@(#)CP Version 17.5.dev, Mon Dec 16 15:08:36 2019" ) ;
+    exec_set_build_date( "Mon Dec 16 15:08:36 2019" ) ;
     exec_set_current_version( "17.5.dev" ) ;
 
     populate_sim_services_class_map() ;

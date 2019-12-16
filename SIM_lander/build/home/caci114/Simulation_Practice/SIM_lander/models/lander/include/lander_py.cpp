@@ -5227,7 +5227,7 @@ fail:
 SWIGINTERN PyObject *_wrap_Lander_throttle_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Lander *arg1 = (Lander *) 0 ;
-  int arg2 ;
+  double arg2 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
@@ -5257,7 +5257,7 @@ SWIGINTERN PyObject *_wrap_Lander_throttle_set(PyObject *SWIGUNUSEDPARM(self), P
   }
   {
     int ret ;
-    ret = typemap_in_scalar<int >( arg2 , obj1 , "Lander_throttle_set") ;
+    ret = typemap_in_scalar<double >( arg2 , obj1 , "Lander_throttle_set") ;
     if ( ret != 0 ) {
       SWIG_exception_fail(SWIG_TypeError,"Right hand side could not be converted proper scalar type");
     }
@@ -5274,7 +5274,7 @@ SWIGINTERN PyObject *_wrap_Lander_throttle_get(PyObject *SWIGUNUSEDPARM(self), P
   PyObject *resultobj = 0;
   Lander *arg1 = (Lander *) 0 ;
   PyObject * obj0 = 0 ;
-  int result;
+  double result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:Lander_throttle_get",&obj0)) SWIG_fail;
   {
@@ -5300,18 +5300,18 @@ SWIGINTERN PyObject *_wrap_Lander_throttle_get(PyObject *SWIGUNUSEDPARM(self), P
       arg1 = reinterpret_cast< Lander * >(temp_ptr) ;
     }
   }
-  result = (int) ((arg1)->throttle);
+  result = (double) ((arg1)->throttle);
   {
-    // INT OUT
+    // DOUBLE OUT
     std::string temp_name ;
-    swig_int * t = new swig_int ;
-    t->value = (long long)result ;
+    swig_double * t = new swig_double ;
+    t->value = (double)result ;
     temp_name = "Lander_throttle_get" ;
     temp_name.erase(temp_name.length() - 4) ;
-    //cout << "swig_int out looking for param " << temp_name << std::endl ;
+    //cout << "swig_double out looking for param " << temp_name << std::endl ;
     t->units = Trick::UnitsMap::units_map()->get_units(temp_name) ;
-    //cout << "swig_int out found units " << t->units << std::endl ;
-    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(t), SWIG_TypeQuery("_p_swig_int"), SWIG_POINTER_OWN);
+    //cout << "swig_double out found units " << t->units << std::endl ;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(t), SWIG_TypeQuery("_p_swig_double"), SWIG_POINTER_OWN);
   }
   return resultobj;
 fail:
@@ -6557,6 +6557,55 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Lander_lander_controls(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Lander *arg1 = (Lander *) 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Lander_lander_controls",&obj0)) SWIG_fail;
+  {
+    // Lander *
+    void * temp_ptr ;
+    
+    if ( SWIG_IsOK(SWIG_ConvertPtr(obj0, &temp_ptr,SWIGTYPE_p_Lander, SWIG_POINTER_DISOWN)) ) {
+      arg1 = reinterpret_cast< Lander * >(temp_ptr) ;
+    } else if ( SWIG_IsOK(SWIG_ConvertPtr(obj0, &temp_ptr,SWIG_TypeQuery("_p_swig_ref"), 0)) ) {
+      // Array to pointer assignment
+      swig_ref * temp_swig_ref = reinterpret_cast< swig_ref * >(temp_ptr);
+      if ( temp_swig_ref != NULL ) {
+        arg1 = reinterpret_cast< Lander * >(temp_swig_ref->ref.address) ;
+      }
+    } else if ( SWIG_IsOK(SWIG_ConvertPtr(obj0, &temp_ptr,SWIG_TypeQuery("_p_REF2"), 0)) ) {
+      // We have an address coming in, we don't have to do any translation
+      REF2 * temp_ref = reinterpret_cast< REF2 * >(temp_ptr) ;
+      if ( temp_ref != NULL ){
+        arg1 = reinterpret_cast< Lander * >(temp_ref->address) ;
+      }
+    } else if ( SWIG_IsOK(SWIG_ConvertPtr(obj0, &temp_ptr,SWIG_TypeQuery("_p_void"), 0)) ) {
+      // We have an address coming in, we don't have to do any translation
+      arg1 = reinterpret_cast< Lander * >(temp_ptr) ;
+    }
+  }
+  result = (int)(arg1)->lander_controls();
+  {
+    // INT OUT
+    std::string temp_name ;
+    swig_int * t = new swig_int ;
+    t->value = (long long)result ;
+    temp_name = "Lander_lander_controls" ;
+    temp_name.erase(temp_name.length() - 4) ;
+    //cout << "swig_int out looking for param " << temp_name << std::endl ;
+    t->units = Trick::UnitsMap::units_map()->get_units(temp_name) ;
+    //cout << "swig_int out found units " << t->units << std::endl ;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(t), SWIG_TypeQuery("_p_swig_int"), SWIG_POINTER_OWN);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Lander_lander_deriv(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Lander *arg1 = (Lander *) 0 ;
@@ -6643,6 +6692,104 @@ SWIGINTERN PyObject *_wrap_Lander_lander_integ(PyObject *SWIGUNUSEDPARM(self), P
     swig_int * t = new swig_int ;
     t->value = (long long)result ;
     temp_name = "Lander_lander_integ" ;
+    temp_name.erase(temp_name.length() - 4) ;
+    //cout << "swig_int out looking for param " << temp_name << std::endl ;
+    t->units = Trick::UnitsMap::units_map()->get_units(temp_name) ;
+    //cout << "swig_int out found units " << t->units << std::endl ;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(t), SWIG_TypeQuery("_p_swig_int"), SWIG_POINTER_OWN);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Lander_lander_post_integ(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Lander *arg1 = (Lander *) 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Lander_lander_post_integ",&obj0)) SWIG_fail;
+  {
+    // Lander *
+    void * temp_ptr ;
+    
+    if ( SWIG_IsOK(SWIG_ConvertPtr(obj0, &temp_ptr,SWIGTYPE_p_Lander, SWIG_POINTER_DISOWN)) ) {
+      arg1 = reinterpret_cast< Lander * >(temp_ptr) ;
+    } else if ( SWIG_IsOK(SWIG_ConvertPtr(obj0, &temp_ptr,SWIG_TypeQuery("_p_swig_ref"), 0)) ) {
+      // Array to pointer assignment
+      swig_ref * temp_swig_ref = reinterpret_cast< swig_ref * >(temp_ptr);
+      if ( temp_swig_ref != NULL ) {
+        arg1 = reinterpret_cast< Lander * >(temp_swig_ref->ref.address) ;
+      }
+    } else if ( SWIG_IsOK(SWIG_ConvertPtr(obj0, &temp_ptr,SWIG_TypeQuery("_p_REF2"), 0)) ) {
+      // We have an address coming in, we don't have to do any translation
+      REF2 * temp_ref = reinterpret_cast< REF2 * >(temp_ptr) ;
+      if ( temp_ref != NULL ){
+        arg1 = reinterpret_cast< Lander * >(temp_ref->address) ;
+      }
+    } else if ( SWIG_IsOK(SWIG_ConvertPtr(obj0, &temp_ptr,SWIG_TypeQuery("_p_void"), 0)) ) {
+      // We have an address coming in, we don't have to do any translation
+      arg1 = reinterpret_cast< Lander * >(temp_ptr) ;
+    }
+  }
+  result = (int)(arg1)->lander_post_integ();
+  {
+    // INT OUT
+    std::string temp_name ;
+    swig_int * t = new swig_int ;
+    t->value = (long long)result ;
+    temp_name = "Lander_lander_post_integ" ;
+    temp_name.erase(temp_name.length() - 4) ;
+    //cout << "swig_int out looking for param " << temp_name << std::endl ;
+    t->units = Trick::UnitsMap::units_map()->get_units(temp_name) ;
+    //cout << "swig_int out found units " << t->units << std::endl ;
+    resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(t), SWIG_TypeQuery("_p_swig_int"), SWIG_POINTER_OWN);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Lander_lander_shutdown(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Lander *arg1 = (Lander *) 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Lander_lander_shutdown",&obj0)) SWIG_fail;
+  {
+    // Lander *
+    void * temp_ptr ;
+    
+    if ( SWIG_IsOK(SWIG_ConvertPtr(obj0, &temp_ptr,SWIGTYPE_p_Lander, SWIG_POINTER_DISOWN)) ) {
+      arg1 = reinterpret_cast< Lander * >(temp_ptr) ;
+    } else if ( SWIG_IsOK(SWIG_ConvertPtr(obj0, &temp_ptr,SWIG_TypeQuery("_p_swig_ref"), 0)) ) {
+      // Array to pointer assignment
+      swig_ref * temp_swig_ref = reinterpret_cast< swig_ref * >(temp_ptr);
+      if ( temp_swig_ref != NULL ) {
+        arg1 = reinterpret_cast< Lander * >(temp_swig_ref->ref.address) ;
+      }
+    } else if ( SWIG_IsOK(SWIG_ConvertPtr(obj0, &temp_ptr,SWIG_TypeQuery("_p_REF2"), 0)) ) {
+      // We have an address coming in, we don't have to do any translation
+      REF2 * temp_ref = reinterpret_cast< REF2 * >(temp_ptr) ;
+      if ( temp_ref != NULL ){
+        arg1 = reinterpret_cast< Lander * >(temp_ref->address) ;
+      }
+    } else if ( SWIG_IsOK(SWIG_ConvertPtr(obj0, &temp_ptr,SWIG_TypeQuery("_p_void"), 0)) ) {
+      // We have an address coming in, we don't have to do any translation
+      arg1 = reinterpret_cast< Lander * >(temp_ptr) ;
+    }
+  }
+  result = (int)(arg1)->lander_shutdown();
+  {
+    // INT OUT
+    std::string temp_name ;
+    swig_int * t = new swig_int ;
+    t->value = (long long)result ;
+    temp_name = "Lander_lander_shutdown" ;
     temp_name.erase(temp_name.length() - 4) ;
     //cout << "swig_int out looking for param " << temp_name << std::endl ;
     t->units = Trick::UnitsMap::units_map()->get_units(temp_name) ;
@@ -6875,8 +7022,11 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Lander_good_land_get", _wrap_Lander_good_land_get, METH_VARARGS, NULL},
 	 { (char *)"Lander_lander_default_data", _wrap_Lander_lander_default_data, METH_VARARGS, NULL},
 	 { (char *)"Lander_lander_init", _wrap_Lander_lander_init, METH_VARARGS, NULL},
+	 { (char *)"Lander_lander_controls", _wrap_Lander_lander_controls, METH_VARARGS, NULL},
 	 { (char *)"Lander_lander_deriv", _wrap_Lander_lander_deriv, METH_VARARGS, NULL},
 	 { (char *)"Lander_lander_integ", _wrap_Lander_lander_integ, METH_VARARGS, NULL},
+	 { (char *)"Lander_lander_post_integ", _wrap_Lander_lander_post_integ, METH_VARARGS, NULL},
+	 { (char *)"Lander_lander_shutdown", _wrap_Lander_lander_shutdown, METH_VARARGS, NULL},
 	 { (char *)"Lander___getitem__", _wrap_Lander___getitem__, METH_VARARGS, NULL},
 	 { (char *)"Lander___len__", _wrap_Lander___len__, METH_VARARGS, NULL},
 	 { (char *)"new_Lander", _wrap_new_Lander, METH_VARARGS, NULL},

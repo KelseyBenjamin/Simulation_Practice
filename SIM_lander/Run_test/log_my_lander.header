@@ -2,8 +2,9 @@ log_my_lander is in ASCII
 log_my_lander	double	     s	sys.exec.out.time
 log_my_lander	double	     1	dyn.lander.pos[0]
 log_my_lander	double	     1	dyn.lander.pos[1]
+log_my_lander	double	     1	dyn.lander.angle
 log_my_lander	double	     1	dyn.lander.vel[0]
 log_my_lander	double	     1	dyn.lander.vel[1]
 log_my_lander	double	     1	dyn.lander.mass
-log_my_lander	double	     1	dyn.lander.angle
-log_my_lander	int	     1	dyn.lander.throttle
+log_my_lander	double	     1	dyn.lander.angleDot
+log_my_lander	double	     1	dyn.lander.throttle
